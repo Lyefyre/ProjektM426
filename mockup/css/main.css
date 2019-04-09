@@ -1,0 +1,158 @@
+.mobilHide {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  color: #d8d8d0;
+}
+
+.mobilHide div {
+  margin: 12px;
+  text-align: center;
+  font-size: 4vw;
+}
+
+@media screen and (max-width: 768px) {
+  .mobilHide {
+    display: flex;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background: #d8d8d0;
+  color: #000;
+}
+
+hr {
+  width: 100%;
+}
+
+header, hr {
+  border: 0 none;
+  border-bottom: #000 1px solid;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 144px;
+  background: #666;
+  color: #d8d8d0;
+  font-weight: 800;
+}
+
+header p {
+  margin: auto 12px;
+  height: 48px;
+}
+
+header p:not(#menu) {
+  line-height: 48px;
+}
+
+header p#menu {
+  text-align: center;
+}
+
+header p#menu span {
+  background: #99f;
+  min-width: 92px;
+  padding: 12px;
+  margin: 0 12px;
+  border: #000 1px solid;
+  cursor: pointer;
+  display: inline-block;
+  color: #000;
+}
+
+body, div.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div#user_with_login, div#user_without_login, div#see_the_stuff_in_my_coolbox, div#upload_or_delete_stuff_in_my_coolbox {
+  display: none;
+}
+
+div.display {
+  width: 100%;
+  height: calc(100% - 144px);
+  margin-top: 144px;
+}
+
+div.element {
+  background: #ccc;
+  width: 280px;
+  height: 96px;
+  border: #000 2px dotted;
+  border-radius: 8px;
+  margin: 12px auto;
+}
+
+div.element.text {
+  width: auto;
+  border: none;
+  background: none;
+}
+
+div.element.accentuate {
+  border: #99f 2px dotted;
+  color: #99f;
+  background: #333;
+}
+
+div.display div span {
+  position: absolute;
+  padding: 6px;
+}
+
+div.display div span.infotext {
+  position: relative;
+  padding: 6px;
+}
+
+div#user_with_login div, div#user_without_login div, div#see_the_stuff_in_my_coolbox div, div#upload_or_delete_stuff_in_my_coolbox div {
+  display: inline-flex;
+}
+
+div.confirmBg {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 144px);
+  left: 0;
+  top: 144px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+div.confirmElement {
+  width: 480px;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.5);
+  margin-top: calc(50vh - 72px - 48px);
+  border: #000 2px dotted;
+  border-radius: 8px;
+}
+
+footer {
+  background: #ccc;
+  padding: 0 1vw;
+}
+
+footer span {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  left: calc(50vw - 600px);
+}
