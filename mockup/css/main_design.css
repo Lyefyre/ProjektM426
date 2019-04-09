@@ -30,18 +30,21 @@ body {
   min-height: 100vh;
   background: #d8d8d0;
   color: #000;
+  background-image: url('../images/antarctica.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  font-family: 'Open Sans', sans-serif;
 }
 
 hr {
   width: 100%;
-}
-
-header, hr {
   border: 0 none;
-  border-bottom: #000 1px solid;
+  border-bottom: #fff 1px solid;
 }
 
 header {
+  border: 0 none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -76,10 +79,21 @@ header p#menu span {
   color: #000;
 }
 
-div.display {
+div.display, div.dropbox {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+div.display div.dropbox {
+  flex-direction: row;
+  background: rgba(15, 3, 53, 0.6);
+  margin: 72px;
+  justify-content: space-around;
+}
+
+div.display div.dropbox>div {
+  margin: 24px;
 }
 
 div#user_with_login, div#user_without_login, div#see_the_stuff_in_my_coolbox, div#upload_or_delete_stuff_in_my_coolbox {
@@ -116,14 +130,18 @@ div.element.accentuate {
 div.display div span {
   position: absolute;
   padding: 6px;
+  font-size: 14px;
 }
 
 div.display div span.infotext {
   position: relative;
   padding: 6px;
+  color: #fff;
+  font-size: 36px;
+  font-family: 'Fredoka One', cursive;
 }
 
-div#user_with_login div, div#user_without_login div, div#see_the_stuff_in_my_coolbox div, div#upload_or_delete_stuff_in_my_coolbox div {
+div.display>div:not(.dropbox) {
   display: inline-flex;
 }
 
