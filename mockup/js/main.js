@@ -17,7 +17,7 @@ var contentSwitch = function(name) {
     }
   }
 
-  document.getElementById('subject').innerHTML = 'you are at "' + name + '" view.';
+  document.getElementById('subject').innerHTML = 'you are at the "' + name + '" view.';
 
 };
 
