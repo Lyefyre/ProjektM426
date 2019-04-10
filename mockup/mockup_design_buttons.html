@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>design buttons</title>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans" rel="stylesheet">
+  <link href="css/main_design_buttons.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <p>coolbox design buttons</p>
+    <p id="menu">
+      <span>user with login</span><span>user without login</span><span>see the stuff in my coolbox</span><span>see the stuff in a folder</span><span>upload or delete stuff in my coolbox</span></p>
+    <p id="subject">you are at the startpoint</p>
+  </header>
+  <div class="display" id="user_with_login">
+    <div class="element text">
+      <span class="infotext">please log in</span></div>
+    <hr>
+    <div class="element"><input type="email" name="email" placeholder="email address" value=""></div>
+    <div class="element"><input type="password" name="password" placeholder="password" value=""></div>
+    <hr>
+    <div>
+      <div class="element stopLeft">
+        <button>create new user</button>
+      </div>
+      <div class="element stopRight">
+        <button>log in</button>
+      </div>
+    </div>
+  </div>
+  <div class="display" id="user_without_login">
+    <div class="element text">
+      <span class="infotext">please create an account</span></div>
+    <hr>
+    <div class="element"><input type="email" name="email" placeholder="email address" value=""></div>
+    <div class="element"><input type="password" name="password" placeholder="password" value=""></div>
+    <div class="element">
+      <select name="organisazion">
+        <option value="0">organisazion</option>
+        <option value="1">migros</option>
+        <option value="2">coop</option>
+        <option value="3">bern mobil</option>
+      </select>
+    </div>
+    <hr>
+    <div>
+      <div class="element">
+        <button>log in</button>
+      </div>
+    </div>
+  </div>
+  <div class="display" id="see_the_stuff_in_my_coolbox">
+    <div class="element text">
+      <span class="infotext">here are all files and folders, feel free to download a file or open a folder</span></div>
+    <hr>
+    <div>
+      <div class="element">
+        <span>file 1<br>(click to download)</span></div>
+    </div>
+    <div>
+      <div class="element">
+        <span>file 2<br>(click to download)</span></div>
+    </div>
+    <div>
+      <div class="element">
+        <span>folder 1<br>(click to open)</span></div>
+    </div>
+    <hr>
+    <div>
+      <div class="element stopLeft">
+        <button>log out</button>
+      </div>
+      <div class="element stopRight">
+        <button>upload or delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="display" id="see_the_stuff_in_a_folder">
+    <div class="element text">
+      <span class="infotext">you are inside a folder, feel free to download a file or open a folder</span></div>
+    <hr>
+    <div>
+      <div class="element">
+        <span>file 1<br>(click to download)</span></div>
+    </div>
+    <div>
+      <div class="element">
+        <span>file 2<br>(click to download)</span></div>
+    </div>
+    <div>
+      <div class="element">
+        <span>folder 1<br>(click to open)</span></div>
+    </div>
+    <hr>
+    <div>
+      <div class="element stopLeft">
+        <button>log out</button>
+      </div>
+      <div class="element">
+        <button>one folder up</button>
+      </div>
+      <div class="element stopRight">
+        <button>upload or delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="display" id="upload_or_delete_stuff_in_my_coolbox">
+    <div class="element text">
+      <span class="infotext">feel free to upload files, create a new folder or delete an existing file or folder</span></div>
+    <hr>
+    <div class="dropbox">
+      <span class="droptext">(drag files here to upload them or click to open the files dialog)</span>
+      <div>
+        <div class="element">
+          <span>file 1<br>(click to delete)</span></div>
+      </div>
+      <div>
+        <div class="element">
+          <span>file 2<br>(click to delete)</span></div>
+      </div>
+      <div>
+        <div class="element">
+          <span>folder 1<br>(click to delete)</span></div>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div class="element stopLeft"><input type="text" name="new_folder_name" placeholder="new folder name" value=""></div>
+      <div class="element stopRight">
+        <button>create folder</button>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div class="element stopLeft">
+        <button>log out</button>
+      </div>
+      <div class="element stopRight">
+        <button>done</button>
+      </div>
+    </div>
+  </div>
+  <div class="mobilHide">
+    <div>sorry, no mockup on small displays ...</div>
+  </div>
+</body>
