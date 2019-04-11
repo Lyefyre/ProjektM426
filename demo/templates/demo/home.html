@@ -1,0 +1,26 @@
+{% load bootstrap3 %}
+{% load empty_filters %}
+{% load i18n %}
+{% load static %}
+{% block bootstrap3_extra_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <script type="text/javascript" language="Javascript" src="{% static request.path|urlforheadtags:'js' %}"></script>
+{% endblock %}
+{% block title %}&nbsp;{% endblock %}
+{% block bootstrap3_content %}
+<div class=container>
+  <form action="/home/" method="post">
+    {% csrf_token %}
+    <div id="start">
+      <input type="email" id="un" name="un" placeholder="email">
+      <input type="password" id="pw" name="pw" placeholder="passwort">
+      <button type="submit" name="submit">go</button>
+    </div>
+ </form>
+</div>
+{% endblock %}

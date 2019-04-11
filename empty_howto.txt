@@ -8,16 +8,11 @@ python3.6 -m pip install setuptools
 
 sudo python3.6 -m pip install --upgrade pip
 
-python3.6 -m venv coolenv 
+python3.6 -m venv coolenv
 
 source coolenv/bin/activate
 
 pip install -r requirements.txt
-
-then
-
-bigmac:logtool24 David$ source davenv/bin/activate
-(venv) bigmac:logtool24 David$ pip install -r requirements.txt
 
 python manage.py runserver
 
