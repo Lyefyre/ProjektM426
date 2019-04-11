@@ -17,14 +17,18 @@
   console.log('text_dict: ', text_dict);
   console.log('specificTranslations: ', specificTranslations);
 </script>
-<div class="display" id="see_the_stuff_in_my_coolbox">
-  <div class="element text">
-    <span class="infotext">here are all files and folders, feel free to download a file or open a folder</span></div>
-  <hr>
-  <div id="items_container">
+<header>
+  <div class="text">
+    <p class="infotext">here are all files and folders, feel free to download a file or open a folder</p>
   </div>
   <hr>
-  <div>
+</header>
+<div class="display" id="see_the_stuff_in_my_coolbox">
+  <div id="items_container"></div>
+</div>
+<footer>
+  <hr>
+  <div class="navigation">
     <div class="element stopLeft">
       <button type="button" onclick="jsBtnLink('/logout')">log out</button>
     </div>
@@ -32,5 +36,5 @@
       <button>upload or delete</button>
     </div>
   </div>
-</div>
+</footer>
 {% endblock %}

@@ -31,10 +31,13 @@ body {
   background: #d8d8d0;
   color: #000;
   background-image: url('../images/antarctica.jpg');
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 a,
@@ -43,6 +46,47 @@ a:hover,
 a:focus {
   color: inherit;
   text-decoration: none;
+  outline: 0 none;
+}
+
+header,
+footer {
+  border: 0 none;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+header {
+  height: 144px;
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  min-height: 84px;
+}
+
+footer div.navigation,
+header div.text {
+  width: auto;
+  border: none;
+  background: none;
+}
+
+footer div.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+
+header div.text p.infotext {
+  margin: 36px 72px;
+  color: #fff;
+  font-size: 36px;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 0px 0px 32px #666;
+  text-align: center;
 }
 
 hr {
@@ -109,53 +153,27 @@ option:not(:checked) {
   margin-right: 72px;
 }
 
-header {
-  border: 0 none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 144px;
-  background: #666;
-  color: #d8d8d0;
-  font-weight: 800;
-  z-index: 1;
-}
-
-header p {
-  margin: auto 12px;
-  height: 48px;
-}
-
-header p:not(#menu) {
-  line-height: 48px;
-}
-
-header p#menu {
-  text-align: center;
-}
-
-header p#menu span {
-  background: #99f;
-  min-width: 92px;
-  padding: 12px;
-  margin: 0 12px;
-  border: #000 1px solid;
-  cursor: pointer;
-  display: inline-block;
-  color: #000;
-}
-
 .lighter {
   background: rgba(255, 255, 255, 0.2);
   border: rgba(15, 3, 53, 0.6) 1px solid;
   overflow: hidden;
 }
 
-div.display, div#items_container,
-div.display, div.dropbox {
+div.display,
+div.dropbox {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+div#items_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.display div.element {
+  margin: 12px auto;
 }
 
 div.display div.dropbox {
@@ -177,54 +195,78 @@ div.display div.dropbox>div {
   margin: 24px;
 }
 
-/*
-div#user_with_login, div#user_without_login, div#see_the_stuff_in_my_coolbox, div#see_the_stuff_in_a_folder, div#upload_or_delete_stuff_in_my_coolbox {
-  display: none;
-}
-*/
 div.display {
   width: 100%;
-  height: calc(100% - 144px);
-  padding-top: 144px;
+  min-height: 64vh;
+  margin-top: 72px;
 }
 
 div.element {
   width: 320px;
   height: 64px;
-  margin: 12px auto;
+  margin: 24px;
 }
 
-.lighter,
+div#items_container>div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 16px;
+}
+
 div#items_container div.element {
   width: 16vw;
   height: 16vw;
 }
 
-div.element.text {
-  width: auto;
-  border: none;
-  background: none;
+div#items_container div.element>a>img {
+  width: calc(16vw + 12px);
+  height: calc(16vw + 12px);
+  object-fit: cover;
 }
 
-div.element.accentuate {
-  border: #99f 2px dotted;
-  color: #99f;
-  background: #333;
+div#items_container div.element>a>span {
+  color: rgba(15, 3, 53, 0.6);
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 16vw;
 }
 
+span.lighter div.text {
+  font-size: 2vw;
+  line-height: 3.16vw;
+  position: absolute;
+  overflow: hidden;
+  max-height: 16vw;
+  z-index: -1;
+  width: 16vw;
+  opacity: 0.6;
+  text-align: justify;
+}
+
+div#items_container div.element>a>span>i {
+  color: #fff;
+  font-size: 8vw;
+  width: 8vw;
+  height: 8vw;
+  text-align: center;
+  padding: 4vw;
+  align-self: center;
+  margin: auto;
+}
+
+/*
+.lighter,
+div#items_container div.element {
+  width: 16vw;
+  height: 16vw;
+}
+*/
 div.display div span {
   position: absolute;
   padding: 6px;
   font-size: 14px;
-}
-
-div.display div span.infotext {
-  position: relative;
-  padding: 6px;
-  color: #fff;
-  font-size: 36px;
-  font-family: 'Fredoka One', cursive;
-  text-shadow: 0px 0px 32px #666;
 }
 
 div.dropbox span.droptext {
@@ -234,36 +276,9 @@ div.dropbox span.droptext {
 
 div.display>div:not(.dropbox) {
   display: inline-flex;
+  justify-content: space-between;
 }
 
-div.confirmBg {
-  position: fixed;
-  display: flex;
+div.display>div.centerflex {
   justify-content: center;
-  width: 100%;
-  height: calc(100% - 144px);
-  left: 0;
-  top: 144px;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-div.confirmElement {
-  width: 480px;
-  height: 96px;
-  background: rgba(255, 255, 255, 0.5);
-  margin-top: calc(50vh - 72px - 48px);
-  border: #000 2px dotted;
-  border-radius: 8px;
-}
-
-footer {
-  background: #ccc;
-  padding: 0 1vw;
-}
-
-footer span {
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  left: calc(50vw - 600px);
 }

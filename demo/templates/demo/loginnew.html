@@ -8,12 +8,15 @@
 <script type="text/javascript" language="Javascript" src="{% static 'js/main.js' %}"></script>
 <script type="text/javascript" language="Javascript" src="{% static request.path|urlforheadtags:'js' %}"></script>
 {% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
+<header>
+  <div class="text">
+    <p class="infotext">please create an account</p>
+  </div>
+  <hr>
+</header>
 <form action="/loginnew/" method="post">
   {% csrf_token %}
   <div class="display" id="user_without_login">
-    <div class="element text">
-      <span class="infotext">please create an account</span></div>
-    <hr>
     <div class="element"><input type="email" name="email" placeholder="email address" id="un" value=""></div>
     <div class="element"><input type="password" name="password" placeholder="password" id="pw" value=""></div>
     <div class="element">
@@ -25,7 +28,7 @@
       </select>
     </div>
     <hr>
-    <div>
+    <div class="centerflex">
       <div class="element">
         <button type="submit" name="submit">log in</button>
       </div>
