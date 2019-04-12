@@ -8,7 +8,7 @@ python3.6 -m pip install setuptools
 
 sudo python3.6 -m pip install --upgrade pip
 
-python3.6 -m venv coolenv
+virtualenv coolenv
 
 source coolenv/bin/activate
 
