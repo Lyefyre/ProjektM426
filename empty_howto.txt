@@ -1,0 +1,34 @@
+########
+
+cd /home/david/sites/csbe/schmitz_scrum/coolbox
+
+#pip install setuptools
+
+python3.6 -m pip install setuptools
+
+sudo python3.6 -m pip install --upgrade pip
+
+python3.6 -m venv coolenv
+
+source coolenv/bin/activate
+
+pip install -r requirements.txt
+
+python manage.py runserver
+
+#migration stuff
+
+python manage.py makemigrations
+python manage.py migrate
+
+#language stuff
+
+cd demo (app folder)
+
+django-admin makemessages -l de
+django-admin compilemessages
+
+https://phraseapp.com/blog/posts/quick-guide-django-i18n/
+
+#pdf upload
+http://usefulangle.com/post/20/pdfjs-tutorial-1-preview-pdf-during-upload-wih-next-prev-buttons

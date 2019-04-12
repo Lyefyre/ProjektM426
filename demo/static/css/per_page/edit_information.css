@@ -1,0 +1,114 @@
+input.form-control#id_title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.form-control::placeholder {
+  font-weight: normal;
+}
+
+form.infoForm select#id_status {
+  width: 274px;
+}
+
+form.infoForm div.overlap {
+  display: inline-block;
+}
+
+form.infoForm div.overlap:nth-last-child(1) {
+  float: right;
+  padding: 33px 0 40px 12px;
+}
+
+form.infoForm #btn_add_files,
+form.infoForm #btn_save_changes {
+  display: none;
+}
+
+form#add-photos.dropzone {
+  width: 100%;
+  border: 0 none;
+  border-radius: 40px;
+  background: repeating-linear-gradient(45deg,
+    #fff,
+    #fff 20px,
+    rgb(251, 251, 251) 20px,
+    rgb(251, 251, 251) 40px);
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form#add-photos.dropzone a.dz-remove {
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+form#add-photos.dropzone a.dz-remove>i {
+  background: #86000d;
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  padding: 16px;
+  border-radius: 26px;
+}
+
+.dropzone .dz-preview {
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  background: none;
+}
+
+div.dz-size {
+  display: none;
+}
+
+div.dz-image {
+  border: #000 1px solid;
+}
+
+div.dz-image>img {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+}
+
+div.dz-image>img.icon {
+  padding: 18px;
+  background: rgba(222, 227, 232, 0.8);
+}
+
+.dropzone.dz-clickable .dz-message,
+.dropzone.dz-started .dz-message {
+  flex: 100%;
+  color: #000;
+  display: block;
+}
+
+.dropzone .dz-preview .dz-progress {
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+
+  form.infoForm div.overlap,
+  form.infoForm select#id_status {
+    width: 100%;
+  }
+
+  form.infoForm div.overlap:nth-last-child(1) {
+    padding-left: 0;
+  }
+
+  form.infoForm div.overlap button.btn {
+    min-width: 100%;
+    font-size: 18px;
+    margin: 16px 0;
+    padding: 16px 0;
+  }
+}

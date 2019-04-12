@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-07 00:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/account/email/email_confirmation_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this e-mail because user %(user_display)s has given yours "
+"as an e-mail address to connect their account.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+msgstr ""
+
+#: templates/account/email/email_confirmation_message.txt:7
+#, python-format
+msgid ""
+"Thank you from %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Bitte bestätigen Sie Ihre E-Mail-Adresse"
+
+#: templates/account/email/password_reset_key_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+
+#: templates/account/email/password_reset_key_message.txt:8
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+
+#: templates/account/email/password_reset_key_message.txt:10
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: templates/account/email/password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: templates/account/login.html:6 templates/account/login.html:33
+#: templates/account/login.html:53
+msgid "Sign In"
+msgstr "Anmelden"
+
+#: templates/account/login.html:32
+msgid "Forgot Password?"
+msgstr "Passwort vergessen?"
+
+#: templates/account/login.html:58
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"        of your existing third party accounts. Or, <a href=\"%(signup_url)s"
+"\">sign up</a>\n"
+"        for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: templates/account/login.html:68
+msgid "or"
+msgstr "oder"
+
+#: templates/account/login.html:75
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"        <a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: templates/account/logout.html:10 templates/account/logout.html:18
+msgid "Sign Out"
+msgstr "Abmelden"
+
+#: templates/account/logout.html:11
+msgid "Are you sure you want to sign out?"
+msgstr "Sind Sie sicher, dass Sie sich abmelden wollen?"
+
+#: templates/account/password_reset.html:12
+msgid "Password Reset"
+msgstr "Passwort zurücksetzen"
+
+#: templates/account/password_reset.html:17
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: templates/account/password_reset.html:22
+msgid "Reset My Password"
+msgstr "Mein Passwort zurücksetzen"
+
+#: templates/account/password_reset.html:25
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: templates/account/signup.html:6
+msgid "Signup"
+msgstr "Anmelden"
+
+#: templates/account/signup.html:11 templates/account/signup.html:21
+msgid "Sign Up"
+msgstr "Anmelden"
+
+#: templates/account/signup.html:13
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: templates/account/signup_closed.html:6
+#: templates/account/signup_closed.html:11
+msgid "Sign Up Closed"
+msgstr ""
+
+#: templates/account/signup_closed.html:13
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: templates/account/verification_sent.html:6
+#: templates/account/verification_sent.html:11
+msgid "Verify Your E-mail Address"
+msgstr "Überprüfen Sie Ihre E-Mail-Adresse"
+
+#: templates/account/verification_sent.html:12
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: templates/demo/base.html:72
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: templates/demo/base.html:82
+msgid "Settle"
+msgstr "Monatsrapport"
+
+#: templates/demo/base.html:87
+msgid "Admin"
+msgstr ""
+
+#: templates/demo/information_confirm_delete.html:18
+msgid "Are you sure you want to delete"
+msgstr "Sind Sie sicher, dass Sie dies löschen wollen"
+
+#: templates/demo/information_confirm_delete.html:21
+msgid "delete"
+msgstr "Löschen"
+
+#: templates/demo/information_confirm_delete.html:22
+#: templates/demo/information_form.html:39
+msgid "cancel"
+msgstr "Abbrechen"
+
+#: templates/demo/information_form.html:36
+msgid "add files"
+msgstr "dateien hinzufügen"
+
+#: templates/demo/information_form.html:38
+msgid "save"
+msgstr "speichern"
+
+#: templates/demo/information_form.html:38
+msgid "done"
+msgstr "fertig"
+
+#: templates/demo/information_form.html:39
+msgid "go back"
+msgstr "zurück"
+
+#: templates/demo/information_form.html:43
+msgid "Drag photos or files related to this information here"
+msgstr ""
+"Ziehen Sie Fotos oder Dateien, die sich auf diese Information beziehen, "
+"hierher"
+
+#: templates/demo/information_form.html:43
+msgid "or click"
+msgstr "oder clicken sie"
+
+#: templates/demo/information_list.html:29
+msgid "logout"
+msgstr "abmelden"
+
+#: templates/demo/information_list.html:31
+msgid "login"
+msgstr "anmelden"
+
+#: templates/demo/information_list.html:43
+msgid "add a new information"
+msgstr "Eine neue Information hinzufügen"
+
+#: templates/demo/information_list.html:45
+msgid "delete this information"
+msgstr "Diese Information löschen"
+
+#: templates/demo/information_list.html:46
+msgid "edit this information"
+msgstr "Diese Information bearbeiten"
+
+#: templates/demo/information_list.html:51
+msgid "download this entire information as pdf file"
+msgstr "Diese Information als PDF-Datei herunterladen"
+
+#: views.py:141
+msgid "New (on top)"
+msgstr "Neu (zuoberst)"
+
+#: views.py:142
+msgid "Normal (by creation date)"
+msgstr "Normal (nach Erstellungsdatum)"
+
+#: views.py:143
+msgid "Archive (invisible)"
+msgstr "Archiv (unsichtbar)"
+
+#: views.py:147
+msgid "Write the text of the headline in this field"
+msgstr "Schreiben Sie den Text der Überschrift in dieses Feld"
+
+#: views.py:147
+msgid "Write the headline of the info in this field"
+msgstr "Schreiben Sie die Überschrift der Info in dieses Feld"
+
+#: views.py:148
+msgid "Write the text of the info in this field"
+msgstr "Schreiben Sie den Text der Info in dieses Feld"
+
+#: views.py:156
+msgid "Click to download"
+msgstr "Datei herunterladen"
+
+#: views.py:157
+msgid "Download"
+msgstr "Herunterladen"
+
+#: views.py:158
+msgid "Remove File"
+msgstr "Datei löschen"
+
+#: views.py:159
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: views.py:160
+msgid "Do you want to delete the entire Information"
+msgstr "Möchten Sie die gesamte Information löschen"
+
+#: views.py:161
+msgid "Do you want to delete the File"
+msgstr "Möchten Sie die Datei löschen"
+
+#: views.py:162
+msgid "File deleted"
+msgstr "Datei gelöscht"
+
+#: views.py:163
+msgid "ok"
+msgstr "ok"
+
+#: views.py:164
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: views.py:165
+msgid "Your File has a size of:"
+msgstr "Ihre Datei hat eine Grösse von:"
+
+#: views.py:166
+msgid "But the maximum possible size is:"
+msgstr "Aber die Maximalgrösse beträgt:"

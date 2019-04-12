@@ -1,0 +1,144 @@
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+
+  body {
+    font-family: Arial;
+    font-size: 0.6em;
+    display: relative;
+  }
+
+  h1 {
+    position: relative;
+  }
+
+  h1 img {
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 0 none;
+  }
+
+  /*
+  general
+*/
+  table {
+    /*
+    table-layout: fixed;
+    */
+    margin-top: 36px;
+    width: 100%;
+    border: 0 none;
+  }
+
+  tr:nth-child(even) {
+    background: #f7f7f7;
+  }
+
+  td {
+    border-bottom: #666 1px solid;
+    padding-right: 6px;
+  }
+
+  td a {
+    color: #f00;
+  }
+
+  /*
+  header and footer row
+*/
+  tr:nth-child(1),
+  tr:nth-last-child(1) {
+    font-weight: bold;
+  }
+
+  tr:nth-child(1) td {
+    padding-bottom: 8px;
+  }
+
+  tr:nth-last-child(1) td {
+    padding-top: 8px;
+  }
+
+  tr:nth-last-child(1) {
+    background: none;
+  }
+
+  /*
+  alignment other rows
+*/
+  tr td:nth-child(2),
+  tr td:nth-child(3),
+  tr td:nth-child(7),
+  tr td:nth-child(8),
+  tr td:nth-child(10) {
+    text-align: center;
+  }
+
+  tr td:nth-child(4),
+  tr td:nth-child(5),
+  tr td:nth-child(6),
+  tr td:nth-child(9),
+  tr td:nth-child(11),
+  tr td:nth-child(13) {
+    text-align: right;
+  }
+
+  /*
+  fixed width for bemerkungen ***********************
+*/
+  tr td:nth-last-child(2) {
+    width: 100%;
+  }
+
+  /*
+  alignment header row
+*/
+  tr:nth-child(1) td {
+    /*
+    text-align: center;
+    */
+  }
+
+  tr:nth-child(1) td:nth-child(1) {
+    text-align: left;
+  }
+
+  tr:nth-child(1) td:nth-last-child(1) {
+    text-align: right;
+  }
+
+  div.footer {
+    bottom: 0.8em;
+    font-size: 0.8em;
+    position: absolute;
+    right: 0.8em;
+  }
+
+  /*
+  spesen images
+*/
+  div.images_container hr {
+    border-bottom: #222 1px solid;
+    font-size: 16px;
+  }
+
+  div.images_container p {
+    font-size: 16px;
+  }
+
+  div.images_container p.center {
+    text-align: center;
+  }
+
+  img.spesenphoto {
+    max-width: 100%;
+    max-height: 520px !important;
+    height: 520px;
+  }
+
+  div.footer a {
+    color: #000 !important;
+  }

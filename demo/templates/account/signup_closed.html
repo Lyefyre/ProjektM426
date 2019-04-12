@@ -1,0 +1,16 @@
+{% extends 'demo/base.html' %}
+{% load bootstrap3 %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Sign Up Closed" %}{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>{% trans "Sign Up Closed" %}</h1>
+
+        <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+    </div>
+</div>
+{% endblock %}

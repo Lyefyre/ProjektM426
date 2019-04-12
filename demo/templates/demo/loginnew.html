@@ -1,0 +1,38 @@
+{% load bootstrap3 %} {% load empty_filters %} {% load i18n %} {% load static %} {% block bootstrap3_extra_head %}
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}images/favicon.ico" />
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+<link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+<script type="text/javascript" language="Javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" language="Javascript" src="{% static request.path|urlforheadtags:'js' %}"></script>
+{% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
+<header>
+  <div class="text">
+    <p class="infotext">please create an account</p>
+  </div>
+  <hr>
+</header>
+<form action="/loginnew/" method="post">
+  {% csrf_token %}
+  <div class="display" id="user_without_login">
+    <div class="element"><input type="email" name="email" placeholder="email address" id="un" value=""></div>
+    <div class="element"><input type="password" name="password" placeholder="password" id="pw" value=""></div>
+    <div class="element">
+      <select name="organization">
+        <option value="0" hidden >organization</option>
+        <option value="1">migros</option>
+        <option value="2">coop</option>
+        <option value="3">bern mobil</option>
+      </select>
+    </div>
+    <hr>
+    <div class="centerflex">
+      <div class="element">
+        <button type="submit" name="submit">log in</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

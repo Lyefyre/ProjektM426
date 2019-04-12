@@ -1,0 +1,62 @@
+{% load bootstrap3 %}
+{% load empty_filters %}
+{% load i18n %}
+{% load static %}
+{% block bootstrap3_extra_head %}
+    <html lang="de">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="{% static 'css/jquery-confirm.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-confirm.js' %}" type="text/javascript"></script>
+    <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}&nbsp;{% endblock %}
+{% block content %}
+  <div class=fixtop>
+    {% if request.user.is_superuser %}
+    <a class="btn_inTabRow" href="{% url 'logout' %}" title="{% trans 'logout' %}"><i class="fa fa-user" aria-hidden="true"></i></a>
+    {% else %}
+    <a class="btn_inTabRow" href="{% url 'home' %}" title="{% trans 'login' %}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+    {% endif %}
+  </div>
+  <div class=container>
+    {% for info in object_list %}
+      {% if request.user.is_superuser or info.status != 'ARCHIV' %}
+      <div class="divs-striped {% if info.status == 'ARCHIV' %}inactiv-info{% endif %}">
+        <div class="positioner" id="pos_{{ info.pk }}"></div>
+        {% if request.user.is_superuser %}
+          <h3 class="wrap">{{ info.title }}</h3>
+          <p class="delediline">
+            {% if forloop.first %}
+              <a class="btn_inTabRow" href="{% url 'create_information' %}" title="{% trans 'add a new information' %}"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+            {% endif %}
+            {% if object_list|length > 1 %}
+            <a class="btn_inTabRow" onclick="deleteInfo({{info.pk}})" title="{% trans 'delete this information' %}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+            {% endif %}
+            <a class="btn_inTabRow" href="{% url 'edit_information' pk=info.pk %}" title="{% trans 'edit this information' %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          </p>
+        {% else %}
+          <h3>{{ info.title }}</h3>
+          <p class="delediline">
+            <a class="btn_inTabRow" style="display:none;" href="" title="{% trans 'download this entire information as pdf file' %}"><i class="fa fa-download" aria-hidden="true"></i></a>
+          </p>
+        {% endif %}
+        {{ info.text|linebreaks }}
+        <div class="info_images_container" images-index="{{ info.pk }}"></div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <script type="application/javascript">
+    var isSuper = ('{{ request.user.is_superuser }}' == 'True');
+    var photos = {{ image_urls_dict|to_json }};
+    var text_dict = {{ text_dict|to_json }};
+    var lastEdited = '{{ last_edited }}';
+    var specificTranslations = {{ specificTranslations|to_json }};
+  </script>
+  <script type="text/javascript" language="Javascript" src="{% static request.path|urlforheadtags:'js' %}"></script>
+{% endblock %}
