@@ -2,17 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}images/favicon.ico" />
-
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Merriweather|Oswald" rel="stylesheet">
-<!--
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
--->
-
 <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/main.css' %}" rel="stylesheet"> {% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
 <script type="text/javascript" language="Javascript" src="{% static 'js/main.js' %}"></script>
 <script type="text/javascript" language="Javascript" src="{% static request.path|urlforheadtags:'js' %}"></script>
-
 <script type="application/javascript">
   //var isSuper = ('{{ request.user.is_superuser }}' == 'True');
   var photos = {{ image_urls_dict | to_json }};
@@ -23,14 +17,12 @@
   console.log('text_dict: ', text_dict);
   console.log('specificTranslations: ', specificTranslations);
 </script>
-
 <header>
   <div class="text">
     <p class="infotext">here are all files and folders, feel free to download a file or open a folder</p>
   </div>
   <hr>
 </header>
-
 <div class="display" id="see_the_stuff_in_my_coolbox">
   <div id="items_container"></div>
 </div>
@@ -41,9 +33,8 @@
       <button type="button" onclick="jsBtnLink('/logout')">log out</button>
     </div>
     <div class="element stopRight">
-      <button>upload or delete</button>
+      <button type="button" onclick="jsBtnLink('/bagedit')">upload or delete</button>
     </div>
   </div>
 </footer>
 {% endblock %}
-
