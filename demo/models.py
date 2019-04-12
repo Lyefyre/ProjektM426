@@ -1,12 +1,12 @@
-import pytz
+# import pytz
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.db import models
-import select2.fields
-from django.db.models import Q
+# import select2.fields
+# from django.db.models import Q
 from django.urls import reverse
-from django_extensions.db.models import TimeStampedModel
-import datetime
+# from django_extensions.db.models import TimeStampedModel
+# import datetime
 
 from empty import settings
 
@@ -27,13 +27,11 @@ class Information(models.Model):
         return "{}{}{}".format(self.title, ' mit Status ', self.status)
 
 
+class Organization(models.Model):
+    name = models.CharField(max_length=96)
+
+
 class emptySetting(models.Model):
-    """
-    haelt Konfigurationen fuer die Anwendung.
-    """
-    key = models.CharField(max_length=255)
-    value = models.CharField(max_length=255, null=True, blank=True)
-    datum = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.value, self.datum)
@@ -46,5 +44,6 @@ class emptySetting(models.Model):
 def build_profile_on_user_creation(sender, instance, created, **kwargs):
     if created:
         # profile = Mitarbeiter(owner=instance)
-        profile.is_dispo = False
-        profile.save()
+        # profile.is_dispo = False
+        # profile.save()
+        pass
