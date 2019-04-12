@@ -32,6 +32,12 @@ class Organization(models.Model):
 
 
 class emptySetting(models.Model):
+    """
+    haelt Konfigurationen fuer die Anwendung.
+    """
+    key = models.CharField(max_length=255, null=True, blank=True)
+    value = models.CharField(max_length=255, null=True, blank=True)
+    datum = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.value, self.datum)
