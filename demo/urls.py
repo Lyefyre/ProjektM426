@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect
 
 from empty import settings
 
-from .views import HomePageView, HomePageNewView, BagView, BagEditView, logout_view, AjaxInfoUploadView, delete_info_file, get_pdf_content, EditInformation, deleteInformation, CreateInformation, ReadInformation
+from .views import HomePageView, HomePageNewView, BagView, BagEditView, logout_view, AjaxInfoUploadView, delete_info_file, get_pdf_content, deleteInformation, CreateInformation, ReadInformation
 
 urlpatterns = [
 
@@ -25,11 +25,11 @@ urlpatterns = [
 
     url(r"bag/$", staff_member_required(BagView.as_view()), name="bag"),
 
-    url(r"bagedit/$", staff_member_required(BagEditView.as_view()), name="bagedit"),
+    url(r"bagedit/(?P<pk>\d+)/$", staff_member_required(BagEditView.as_view()), name="bagedit"),
 
     url(r'^create_information/$', staff_member_required(CreateInformation.as_view()), name='create_information'),
 
-    url(r'^edit_information/(?P<pk>\d+)/$', staff_member_required(EditInformation.as_view()), name='edit_information'),
+    # url(r'^edit_information/(?P<pk>\d+)/$', staff_member_required(EditInformation.as_view()), name='edit_information'),
 
     url(r'^delete_information$', staff_member_required(deleteInformation), name='delete_information'),
 

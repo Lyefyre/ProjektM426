@@ -216,15 +216,16 @@ class HomePageNewView(TemplateView):
             return redirect('login')
 
 
-class EditInformation(UpdateView, EditAndCreateInfoFunctions, FileslistAndLasteditInfoFunctions):
+class BagEditView(UpdateView, EditAndCreateInfoFunctions, FileslistAndLasteditInfoFunctions):
     model = Information
     fields = ['title', 'text', 'status']
-    success_url = reverse_lazy('info')
+    success_url = reverse_lazy('bag')
+    template_name = "demo/bagedit.html"
 
     def get_form(self, form_class=None):
         self.setlastedited(self.kwargs['pk'])
 
-        form = self.formatcommonfields(super(EditInformation, self).get_form(form_class))
+        form = self.formatcommonfields(super(BagEditView, self).get_form(form_class))
 
         form.fields['infopk'] = forms.CharField(max_length=250, initial=self.kwargs['pk'])
         form.fields['infopk'].widget = forms.HiddenInput()
@@ -232,17 +233,18 @@ class EditInformation(UpdateView, EditAndCreateInfoFunctions, FileslistAndLasted
         return form
 
     def get_context_data(self, **kwargs):
-        context = super(EditInformation, self).get_context_data(**kwargs)
+        context = super(BagEditView, self).get_context_data(**kwargs)
         context['image_urls_path'] = 'infophotos/' + str(self.kwargs['pk']) + '/'
         path = settings.MEDIA_ROOT + '/infophotos/' + str(self.kwargs['pk']) + '/'
         context['image_urls'] = self.addtolist(path, [], None)
         context['specificTranslations'] = self.speakspecifictranslations()
+        # print('z 240 - specificTranslations: ', context['specificTranslations'])
         return context
 
     def post(self, request, *args, **kwargs):
         self.revertstatuses(request.POST['status'], self.kwargs['pk'])
 
-        return super(EditInformation, self).post(request, *args, **kwargs)
+        return super(BagEditView, self).post(request, *args, **kwargs)
 
 
 class CreateInformation(CreateView, EditAndCreateInfoFunctions):
@@ -353,6 +355,7 @@ class BagView(TemplateView, FileslistAndLasteditInfoFunctions):
         return context
 
 
+"""
 class BagEditView(TemplateView, FileslistAndLasteditInfoFunctions):
     model = Information
     ordering = ['-status', '-id']
@@ -377,6 +380,7 @@ class BagEditView(TemplateView, FileslistAndLasteditInfoFunctions):
             context['image_urls_dict'][str(x.pk)], context['text_dict'][str(x.pk)] = self.addtolist(path, [], [])
 
         return context
+"""
 
 
 @csrf_exempt
