@@ -1,6 +1,5 @@
 Dropzone.autoDiscover = false; // otherwise will be initialized twice
 
-var buttonsSH;
 var myFileTypes = {
   'text/plain': '/static/images/svg-fa/text-o.svg',
   'application/pdf': '/static/images/svg-fa/pdf-o.svg',
@@ -34,69 +33,9 @@ var myFileTypes = {
   }
 };
 document.addEventListener('DOMContentLoaded', function() {
-  /*
-  var el_status = document.getElementById('id_status');
-  el_status.parentNode.classList.add('overlap');
-  el_status.addEventListener('change', function(e) {
-    e.target.blur();
-  }, false);
-  */
   var boxpk = 3;
-  /*
-  var el_infopk = document.getElementById('id_infopk');
-  var el_title = document.getElementById('id_title');
-  */
-  /*
-  if (!el_infopk) {
-    //  form in create mode
-  el_title.value = document.getElementById('id_text').value = '';
-  el_title.focus();
-  el_title.addEventListener('keyup', function(e) {
-    document.getElementById('btn_add_files').style.display = document.getElementById('btn_save_changes').style.display = (e.target.value.length > 0) ? 'inline-block' : 'none';
-  }, false);
-  document.getElementById('btn_add_files').addEventListener('click', function() {
-    document.getElementById('id_listorimages').value = 1;
-    document.getElementById('info-form').submit();
-  }, false);
-  return;
-} else {
-  */
-  /* form in edit mode */
-  buttonsSH = {
-    usedDone: true,
-    usedBack: true,
-    showDone: function() {
-      if (this.usedDone) {
-        console.log('28 ', this);
-        document.getElementById('btn_save_changes').style.display = 'inline-block'
-        this.usedDone = false;
-      }
-    },
-    hideBack: function() {
-      if (this.usedBack) {
-        console.log('28 ', this);
-        document.getElementById('btn_revert_changes').style.display = 'none'
-        this.usedBack = false;
-      }
-    },
-  };
-  /*
-  el_title.addEventListener('keyup', function() {
-    buttonsSH.showDone();
-  }, false);
-  */
-  /*
-  document.getElementById('id_text').addEventListener('keyup', function() {
-    buttonsSH.showDone();
-  }, false);
-  document.getElementById('id_status').addEventListener('change', function() {
-    buttonsSH.showDone();
-  }, false);
-  */
   var addphotos = document.getElementById('add-photos');
-  addphotos.style.display = 'flex';
   addphotos.action = '/ajax-infoupload/' + boxpk + '/';
-  //}
 
   var myDropzoneOptions = {
     acceptedFiles: 'text/plain, application/pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.oasis.opendocument.spreadsheet, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.oasis.opendocument.text, image/jpeg, image/png',
@@ -126,8 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     success: function(file) {
       console.log('succ');
       file_up_names.push(file.name);
-      buttonsSH.showDone();
-      buttonsSH.hideBack();
     },
     error: function(file, err) {
       file.previewElement.parentNode.removeChild(file.previewElement);
@@ -171,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
                       file_up_names.splice(ix_in_names, 1);
                       toRemove = file.previewElement;
                       toRemove.parentNode.removeChild(toRemove);
-                      buttonsSH.showDone();
-                      buttonsSH.hideBack();
                     } else {
                       $.alert('ooops, error while deleting file ... ' + data.message);
                     }
@@ -212,13 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
       myDropzone.emit("thumbnail", metafile, (iconurl) ? iconurl : url);
     }
   }
-  /*
-  var positioner = document.getElementsByClassName('positioner')[0];
-  positioner.scrollIntoView({
-    block: "start",
-    behavior: "smooth"
-  });
-  */
   var remlk = document.getElementsByClassName('dz-remove');
   for (var i = 0; i < remlk.length; i++) {
     remlk[i].removeAttribute('href');

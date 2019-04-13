@@ -9,6 +9,7 @@ var pdfText = {
       return false;
     }
     pdfText.list[pdfText.counter].children[0].style.opcity = 0;
+    console.log('ask: ', pdfText.url_list[pdfText.counter].replace('media/', ''));
     $.ajax({
       method: "POST",
       async: true,
@@ -18,6 +19,7 @@ var pdfText = {
       },
       success: function(data) {
         if (data.status) {
+          console.log('asked: ', data.message);
           pdfText.list[pdfText.counter].children[0].innerHTML = data.message;
           pdfText.list[pdfText.counter].children[0].classList.add('opac_lighter');
         } else {
@@ -188,6 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-  //console.log('pdfText.list: ', pdfText.list);
-  //pdfText.work();
+  console.log('pdfText.list: ', pdfText.list);
+  pdfText.work();
 });

@@ -355,34 +355,6 @@ class BagView(TemplateView, FileslistAndLasteditInfoFunctions):
         return context
 
 
-"""
-class BagEditView(TemplateView, FileslistAndLasteditInfoFunctions):
-    model = Information
-    ordering = ['-status', '-id']
-    template_name = "demo/bagedit.html"
-
-    def get_queryset(self):
-        qs = self.model.objects.all()
-        return qs
-
-    def get_context_data(self, **kwargs):
-        context = super(BagEditView, self).get_context_data(**kwargs)
-        self.object_list = self.get_queryset()
-        filedir = settings.MEDIA_ROOT + '/infophotos/'
-        context['specificTranslations'] = EditAndCreateInfoFunctions.speakspecifictranslations(self)
-        # context['last_edited'] = 'pos_' + str(self.speaklastedited())
-        context['image_urls_path'] = filedir
-        context['image_urls_dict'] = {}
-        context['text_dict'] = {}
-
-        for x in self.object_list:
-            path = filedir + str(x.pk) + '/'
-            context['image_urls_dict'][str(x.pk)], context['text_dict'][str(x.pk)] = self.addtolist(path, [], [])
-
-        return context
-"""
-
-
 @csrf_exempt
 def delete_info_file(request):
 

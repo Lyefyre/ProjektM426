@@ -156,7 +156,7 @@ option:not(:checked) {
 .element>button {
   background: rgba(15, 3, 53, 0.6);
   border: #fff 1px solid;
-  box-sizing: content-box;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -174,8 +174,7 @@ option:not(:checked) {
   overflow: hidden;
 }
 
-div.display,
-div.dropbox {
+div.display {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,23 +194,14 @@ div#items_container>div>div.element {
   margin: 24px;
 }
 
-div.display div.dropbox {
-  background: rgba(15, 3, 53, 0.6);
-}
-
 div.display div#items_container {
   flex-wrap: wrap;
 }
 
-div.display div#items_container,
-div.display div.dropbox {
+div.display div#items_container {
   flex-direction: row;
   margin: 72px;
   justify-content: space-around;
-}
-
-div.display div.dropbox>div {
-  margin: 24px;
 }
 
 div.display {
@@ -289,16 +279,85 @@ div.display div span {
   font-size: 14px;
 }
 
-div.dropbox span.droptext {
-  padding: 6px;
-  color: #fff;
-}
-
-div.display>div:not(.dropbox) {
+div.display>div {
   display: inline-flex;
   justify-content: space-between;
 }
 
 div.display>div.centerflex {
   justify-content: center;
+}
+
+/* all dropzone design */
+form#add-photos.dropzone {
+  margin: 72px;
+  border: #fff 1px solid;
+  background: rgba(15, 3, 53, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+
+form#add-photos.dropzone a.dz-remove {
+  /*
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 20px;
+  */
+  margin-top: -50%;
+  position: absolute;
+  font-size: 6vw;
+  z-index: 100;
+  width: 16vw;
+}
+
+form#add-photos.dropzone a.dz-remove>i {
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropzone .dz-preview {
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  background: none;
+  padding: 12px 44px;
+}
+
+div.dz-size {
+  display: none;
+}
+
+.dropzone .dz-preview div.dz-image {
+  border: #fff 1px solid;
+  border-radius: 0;
+  width: 16vw;
+  height: 16vw;
+}
+
+div.dz-image>img {
+  object-fit: cover;
+  width: 100%;
+  /*
+  height: 120px;
+  */
+}
+
+div.dz-image>img.icon {
+  padding: 18px;
+  background: rgba(222, 227, 232, 0.8);
+}
+
+.dropzone.dz-clickable .dz-message,
+.dropzone.dz-started .dz-message {
+  flex: 100%;
+  color: #000;
+  display: block;
+}
+
+.dropzone .dz-preview .dz-progress {
+  opacity: 0;
 }

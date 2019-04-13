@@ -29,16 +29,15 @@ def get_pdf_content(request):
         interpreter = PDFPageInterpreter(manager, converter)
 
         # call('qpdf --password=%s --decrypt %s %s' %('', pdf_filename, pdf_filename_decr), shell=True)
-        print ('settings.PROJECT_ROOT: ', settings.PROJECT_ROOT)
-        print ('cwd: ', os.getcwd())
+        print('settings.PROJECT_ROOT: ', settings.PROJECT_ROOT)
+        print('cwd: ', os.getcwd())
         tp = settings.PROJECT_ROOT + '/demo/temp.pdf'
-        call('qpdf --password=%s --decrypt %s %s' %('', file_path, tp), shell=True)
+        call('qpdf --password=%s --decrypt %s %s' % ('', file_path, tp), shell=True)
         fp = open(tp, mode='rb')
 
         password = ''
         maxpages = 0
         caching = False
-
 
         for page in PDFPage.get_pages(fp, [0], maxpages=maxpages, password=password, caching=caching):
             interpreter.process_page(page)
