@@ -23,21 +23,19 @@
 {% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
 <header>
   <div class="text">
-    <p class="infotext">here are all files and folders, feel free to download a file or open a folder</p>
+    <p class="infotext">{% trans 'here are all files and folders, feel free to download a file or open a folder' %}</p>
   </div>
-  <hr>
 </header>
 <div class="display" id="see_the_stuff_in_my_coolbox">
   <div id="items_container"></div>
 </div>
 <footer>
-  <hr>
   <div class="navigation">
     <div class="element stopLeft">
-      <button type="button" onclick="jsBtnLink('/logout')">log out</button>
+      <button type="button" onclick="jsBtnLink('/logout')">{% trans 'log out' %}</button>
     </div>
     <div class="element stopRight">
-      <button type="button" onclick="jsBtnLink('/bagedit/3')">upload or delete</button>
+      <button type="button" onclick="jsBtnLink('/bagedit/3')">{% trans 'edit' %}</button>
     </div>
   </div>
 </footer>

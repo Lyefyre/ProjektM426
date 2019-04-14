@@ -19,6 +19,7 @@ pdfminer.settings.STRICT = False
 
 @csrf_exempt
 def get_pdf_content(request):
+    print('hallo')
 
     if request.method == 'POST':
         file_path = settings.MEDIA_ROOT + '/' + request.POST['file_path']

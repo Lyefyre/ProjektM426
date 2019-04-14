@@ -19,7 +19,6 @@ var pdfText = {
       },
       success: function(data) {
         if (data.status) {
-          console.log('asked: ', data.message);
           pdfText.list[pdfText.counter].children[0].innerHTML = data.message;
           pdfText.list[pdfText.counter].children[0].classList.add('opac_lighter');
         } else {

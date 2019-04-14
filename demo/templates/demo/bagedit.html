@@ -33,25 +33,31 @@
 {% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
 <header>
   <div class="text">
-    <p class="infotext">feel free to upload files, create a new folder or delete an existing file or folder</p>
+    <p class="infotext">{% trans 'feel free to upload files, create a new folder or delete an existing file or folder' %}</p>
   </div>
-  <hr>
 </header>
 <div class="display" id="see_the_stuff_in_my_coolbox">
     <form id="add-photos" class="dropzone" enctype="multipart/form-data">
-      <div class="dz-message" data-dz-message><span>{% trans 'Drag photos or files here' %} ({% trans 'or click' %})</span></div>
+      <div class="dz-message" data-dz-message><span>{% trans 'drag files here' %} ({% trans 'or click' %})</span></div>
       {% csrf_token %}
     </form>
   <div id="items_container"></div>
 </div>
 <footer>
-  <hr>
   <div class="navigation">
     <div class="element stopLeft">
-      <button type="button" onclick="jsBtnLink('/logout')">log out</button>
+      <input type="text" name="new_folder_name" placeholder="{% trans 'folder name' %}" value="">
     </div>
     <div class="element stopRight">
-      <button type="button" onclick="jsBtnLink('/bag')">done</button>
+      <button type="button" onclick="jsBtnLink('/bag')">{% trans 'create new folder' %}</button>
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="element stopLeft">
+      <button type="button" onclick="jsBtnLink('/logout')">{% trans 'log out' %}</button>
+    </div>
+    <div class="element stopRight">
+      <button type="button" onclick="jsBtnLink('/bag')">{% trans 'done' %}</button>
     </div>
   </div>
 </footer>

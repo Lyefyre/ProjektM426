@@ -2,3 +2,4 @@ coolenv
 db.sqlite3
 demo/__pycache__
 media
+demo/static/images/alternatives

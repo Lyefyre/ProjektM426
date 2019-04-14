@@ -30,6 +30,9 @@ class Information(models.Model):
 class Organization(models.Model):
     name = models.CharField(max_length=96)
 
+    def __str__(self):
+        return "{}".format(self.name)
+
 
 class emptySetting(models.Model):
     """

@@ -14,24 +14,24 @@
 {% endblock %} {% block title %}&nbsp;{% endblock %} {% block bootstrap3_content %}
 <header>
   <div class="text">
-    <p class="infotext">please log in</p>
+    <p class="infotext">{% trans 'please log in' %}</p>
   </div>
-  <hr>
 </header>
-<form action="/login/" method="post">
+<form action="/start/" method="post">
   {% csrf_token %}
   <div class="display" id="user_with_login">
-    <div class="element"><input type="email" name="email" placeholder="email address" id="un" value=""></div>
-    <div class="element"><input type="password" name="password" placeholder="password" id="pw" value=""></div>
-    <hr>
-    <div>
+    <div class="element"><input type="email" name="email" placeholder="{% trans 'email address' %}" id="un" value=""></div>
+    <div class="element"><input type="password" name="password" placeholder="{% trans 'password' %}" id="pw" value=""></div>
+  </div>
+  <footer>
+    <div class="navigation">
       <div class="element stopLeft">
-        <button type="button" onclick="jsBtnLink('/loginnew')">create new user</button>
+        <button type="button" onclick="jsBtnLink('/loginnew')">{% trans 'create new user' %}</button>
       </div>
       <div class="element stopRight">
-        <button type="submit" name="submit">log in</button>
+        <button type="submit" name="submit">{% trans 'log in' %}</button>
       </div>
     </div>
-  </div>
+  </footer>
 </form>
 {% endblock %}

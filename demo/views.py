@@ -24,7 +24,7 @@ from django_hashedfilenamestorage.storage import HashedFilenameFileSystemStorage
 from django.db.models import CharField, Value as V
 
 from empty import settings
-from demo.models import Information
+from demo.models import Information, Organization
 
 from django.views.decorators.csrf import csrf_exempt
 
@@ -174,7 +174,7 @@ class EditAndCreateInfoFunctions():
 
 
 class HomePageView(TemplateView):
-    template_name = "demo/login.html"
+    template_name = "demo/start.html"
 
     def post(self, request, *args, **kwargs):
 
@@ -182,14 +182,16 @@ class HomePageView(TemplateView):
 
         if user is not None:
             login(request, user)
+
             return redirect('bag')
 
         else:
 
-            return redirect('login')
+            return redirect('start')
 
 
 class HomePageNewView(TemplateView):
+    model = Organization
     template_name = "demo/loginnew.html"
 
     def post(self, request, *args, **kwargs):
@@ -197,15 +199,27 @@ class HomePageNewView(TemplateView):
         user = authenticate(request, username=request.POST['email'], password=request.POST['password'])
 
         print('hallo product owner DS, somebody requested an account for organization nr. ', request.POST['organization'])
+        print('')
+        is_Org = len(self.model.objects.filter(pk=request.POST['organization']))
+        print('try org2: ', is_Org)
 
-        if user is not None:
-            login(request, user)
+        if is_Org == 1:
+            if user is not None:
+                login(request, user)
 
-            print('')
-            print('hallo product owner DS, you are logged in')
-            print('')
+                print('')
+                print('hallo product owner DS, you are logged in')
+                print('')
 
-            return redirect('bag')
+                return redirect('bag')
+
+            else:
+
+                print('')
+                print('hallo product owner DS, you are rejected by wrong organization')
+                print('')
+
+                return redirect('start')
 
         else:
 
@@ -213,7 +227,7 @@ class HomePageNewView(TemplateView):
             print('hallo product owner DS, you are rejected')
             print('')
 
-            return redirect('login')
+            return redirect('start')
 
 
 class BagEditView(UpdateView, EditAndCreateInfoFunctions, FileslistAndLasteditInfoFunctions):
@@ -430,4 +444,4 @@ class AjaxInfoUploadView(LoginRequiredMixin, JSONResponseMixin, AjaxResponseMixi
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('start')

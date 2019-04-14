@@ -242,7 +242,8 @@ LANGUAGES = (
 )
 
 
-LOGIN_REDIRECT_URL = '/admin/'
+# LOGIN_REDIRECT_URL = '/admin/'
+LOGIN_REDIRECT_URL = '/'
 
 # Celery
 # http://docs.celeryproject.org/en/latest/

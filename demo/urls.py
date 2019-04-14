@@ -15,11 +15,15 @@ from .views import HomePageView, HomePageNewView, BagView, BagEditView, logout_v
 
 urlpatterns = [
 
-    # url(r"^", admin.site.urls),
+    # url(r"^admin/$", admin.site.urls),
 
     # url(r"home/$", HomePageView.as_view(), name="home"),
 
-    url(r"login/$", HomePageView.as_view(), name="login"),
+    # url(r'^$', staff_member_required(BagView.as_view())),
+
+    url(r"^start/$", HomePageView.as_view(), name="start"),
+
+    url(r'^$', lambda r: HttpResponseRedirect('start')),
 
     url(r"loginnew/$", HomePageNewView.as_view(), name="loginnew"),
 

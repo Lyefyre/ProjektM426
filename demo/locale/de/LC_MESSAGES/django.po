@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-07 00:52+0100\n"
+"POT-Creation-Date: 2019-04-13 12:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: templates/account/email/email_confirmation_subject.txt:3
 msgid "Please Confirm Your E-mail Address"
-msgstr "Bitte bestätigen Sie Ihre E-Mail-Adresse"
+msgstr ""
 
 #: templates/account/email/password_reset_key_message.txt:1
 #, python-format
@@ -70,11 +70,11 @@ msgstr ""
 #: templates/account/login.html:6 templates/account/login.html:33
 #: templates/account/login.html:53
 msgid "Sign In"
-msgstr "Anmelden"
+msgstr ""
 
 #: templates/account/login.html:32
 msgid "Forgot Password?"
-msgstr "Passwort vergessen?"
+msgstr ""
 
 #: templates/account/login.html:58
 #, python-format
@@ -87,7 +87,7 @@ msgstr ""
 
 #: templates/account/login.html:68
 msgid "or"
-msgstr "oder"
+msgstr ""
 
 #: templates/account/login.html:75
 #, python-format
@@ -98,15 +98,15 @@ msgstr ""
 
 #: templates/account/logout.html:10 templates/account/logout.html:18
 msgid "Sign Out"
-msgstr "Abmelden"
+msgstr ""
 
 #: templates/account/logout.html:11
 msgid "Are you sure you want to sign out?"
-msgstr "Sind Sie sicher, dass Sie sich abmelden wollen?"
+msgstr ""
 
 #: templates/account/password_reset.html:12
 msgid "Password Reset"
-msgstr "Passwort zurücksetzen"
+msgstr ""
 
 #: templates/account/password_reset.html:17
 msgid ""
@@ -116,7 +116,7 @@ msgstr ""
 
 #: templates/account/password_reset.html:22
 msgid "Reset My Password"
-msgstr "Mein Passwort zurücksetzen"
+msgstr ""
 
 #: templates/account/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
@@ -124,11 +124,11 @@ msgstr ""
 
 #: templates/account/signup.html:6
 msgid "Signup"
-msgstr "Anmelden"
+msgstr ""
 
 #: templates/account/signup.html:11 templates/account/signup.html:21
 msgid "Sign Up"
-msgstr "Anmelden"
+msgstr ""
 
 #: templates/account/signup.html:13
 #, python-format
@@ -148,7 +148,7 @@ msgstr ""
 #: templates/account/verification_sent.html:6
 #: templates/account/verification_sent.html:11
 msgid "Verify Your E-mail Address"
-msgstr "Überprüfen Sie Ihre E-Mail-Adresse"
+msgstr ""
 
 #: templates/account/verification_sent.html:12
 msgid ""
@@ -157,145 +157,192 @@ msgid ""
 "within a few minutes."
 msgstr ""
 
-#: templates/demo/base.html:72
-msgid "Welcome"
-msgstr "Willkommen"
-
-#: templates/demo/base.html:82
-msgid "Settle"
-msgstr "Monatsrapport"
-
-#: templates/demo/base.html:87
-msgid "Admin"
+#: templates/demo/bag.html:26
+msgid ""
+"here are all files and folders, feel free to download a file or open a folder"
 msgstr ""
+"hier sind alle dateien und ordner, laden sie dateien herunter oder öffnen sie einen ordner"
 
-#: templates/demo/information_confirm_delete.html:18
-msgid "Are you sure you want to delete"
-msgstr "Sind Sie sicher, dass Sie dies löschen wollen"
+#: templates/demo/bag.html:35 templates/demo/bagedit.html:57
+msgid "log out"
+msgstr "abmelden"
 
-#: templates/demo/information_confirm_delete.html:21
-msgid "delete"
-msgstr "Löschen"
+#: templates/demo/bag.html:38
+msgid "edit"
+msgstr "bearbeiten"
 
-#: templates/demo/information_confirm_delete.html:22
-#: templates/demo/information_form.html:39
-msgid "cancel"
-msgstr "Abbrechen"
-
-#: templates/demo/information_form.html:36
-msgid "add files"
-msgstr "dateien hinzufügen"
-
-#: templates/demo/information_form.html:38
-msgid "save"
-msgstr "speichern"
-
-#: templates/demo/information_form.html:38
-msgid "done"
-msgstr "fertig"
-
-#: templates/demo/information_form.html:39
-msgid "go back"
-msgstr "zurück"
-
-#: templates/demo/information_form.html:43
-msgid "Drag photos or files related to this information here"
+#: templates/demo/bagedit.html:36
+msgid ""
+"feel free to upload files, create a new folder or delete an existing file or "
+"folder"
 msgstr ""
-"Ziehen Sie Fotos oder Dateien, die sich auf diese Information beziehen, "
-"hierher"
+"laden sie dateien hoch, erstellen sie ordner oder löschen sie "
+"bestehende dateien und ordner"
 
-#: templates/demo/information_form.html:43
+#: templates/demo/bagedit.html:41
+msgid "drag files here"
+msgstr "ziehen sie dateien hierher"
+
+#: templates/demo/bagedit.html:41 templates/demo/information_form.html:27
 msgid "or click"
 msgstr "oder clicken sie"
 
-#: templates/demo/information_list.html:29
+#: templates/demo/bagedit.html:49
+msgid "folder name"
+msgstr "ordner name"
+
+#: templates/demo/bagedit.html:52
+msgid "create new folder"
+msgstr "ordner erstellen"
+
+#: templates/demo/bagedit.html:60 templates/demo/information_form.html:22
+msgid "done"
+msgstr "fertig"
+
+#: templates/demo/information_form.html:21
+msgid "add files"
+msgstr "dateien hinzufügen"
+
+#: templates/demo/information_form.html:22
+msgid "save"
+msgstr "speichern"
+
+#: templates/demo/information_form.html:23
+msgid "cancel"
+msgstr "abbrechen"
+
+#: templates/demo/information_form.html:23
+msgid "go back"
+msgstr "zurück"
+
+#: templates/demo/information_form.html:27
+msgid "Drag photos or files related to this information here"
+msgstr ""
+
+#: templates/demo/information_list.html:21
 msgid "logout"
 msgstr "abmelden"
 
-#: templates/demo/information_list.html:31
+#: templates/demo/information_list.html:23
 msgid "login"
 msgstr "anmelden"
 
-#: templates/demo/information_list.html:43
+#: templates/demo/information_list.html:35 views.py:164
 msgid "add a new information"
-msgstr "Eine neue Information hinzufügen"
+msgstr ""
+
+#: templates/demo/information_list.html:38
+msgid "delete this information"
+msgstr ""
+
+#: templates/demo/information_list.html:40
+msgid "edit this information"
+msgstr ""
 
 #: templates/demo/information_list.html:45
-msgid "delete this information"
-msgstr "Diese Information löschen"
-
-#: templates/demo/information_list.html:46
-msgid "edit this information"
-msgstr "Diese Information bearbeiten"
-
-#: templates/demo/information_list.html:51
 msgid "download this entire information as pdf file"
-msgstr "Diese Information als PDF-Datei herunterladen"
+msgstr ""
 
-#: views.py:141
+#: templates/demo/login.html:17
+msgid "please log in"
+msgstr "bitte melden sie sich an"
+
+#: templates/demo/login.html:23 templates/demo/loginnew.html:23
+msgid "email address"
+msgstr "email adresse"
+
+#: templates/demo/login.html:24 templates/demo/loginnew.html:24
+msgid "password"
+msgstr "passwort"
+
+#: templates/demo/login.html:28
+msgid "create new user"
+msgstr "benutzer erstellen"
+
+#: templates/demo/login.html:31 templates/demo/loginnew.html:36
+msgid "log in"
+msgstr "anmelden"
+
+#: templates/demo/loginnew.html:17
+msgid "please create an account"
+msgstr "bitte erstellen sie einen account"
+
+#: templates/demo/loginnew.html:27
+msgid "organization"
+msgstr "organisation"
+
+#: views.py:136
 msgid "New (on top)"
-msgstr "Neu (zuoberst)"
+msgstr ""
+
+#: views.py:137
+msgid "Normal (by creation date)"
+msgstr ""
+
+#: views.py:138
+msgid "Archive (invisible)"
+msgstr ""
 
 #: views.py:142
-msgid "Normal (by creation date)"
-msgstr "Normal (nach Erstellungsdatum)"
+msgid "Write the text of the headline in this field"
+msgstr ""
+
+#: views.py:142
+msgid "Write the headline of the info in this field"
+msgstr ""
 
 #: views.py:143
-msgid "Archive (invisible)"
-msgstr "Archiv (unsichtbar)"
-
-#: views.py:147
-msgid "Write the text of the headline in this field"
-msgstr "Schreiben Sie den Text der Überschrift in dieses Feld"
-
-#: views.py:147
-msgid "Write the headline of the info in this field"
-msgstr "Schreiben Sie die Überschrift der Info in dieses Feld"
-
-#: views.py:148
 msgid "Write the text of the info in this field"
-msgstr "Schreiben Sie den Text der Info in dieses Feld"
+msgstr ""
 
-#: views.py:156
+#: views.py:151
 msgid "Click to download"
-msgstr "Datei herunterladen"
+msgstr "Click um herunterzuladen"
 
-#: views.py:157
+#: views.py:152
 msgid "Download"
 msgstr "Herunterladen"
 
-#: views.py:158
+#: views.py:153
 msgid "Remove File"
-msgstr "Datei löschen"
+msgstr "datei löschen"
+
+#: views.py:154
+msgid "Confirm"
+msgstr ""
+
+#: views.py:155
+msgid "Do you want to delete the entire Information"
+msgstr ""
+
+#: views.py:156
+msgid "Do you want to delete the File"
+msgstr ""
+
+#: views.py:157
+msgid "File deleted"
+msgstr "datei gelöscht"
+
+#: views.py:158
+msgid "ok"
+msgstr ""
 
 #: views.py:159
-msgid "Confirm"
-msgstr "Bestätigen"
+msgid "Cancel"
+msgstr "abbrechen"
 
 #: views.py:160
-msgid "Do you want to delete the entire Information"
-msgstr "Möchten Sie die gesamte Information löschen"
+msgid "Your File has a size of:"
+msgstr ""
 
 #: views.py:161
-msgid "Do you want to delete the File"
-msgstr "Möchten Sie die Datei löschen"
+msgid "But the maximum possible size is:"
+msgstr ""
 
 #: views.py:162
-msgid "File deleted"
-msgstr "Datei gelöscht"
+msgid "You can't upload files of this type."
+msgstr ""
 
 #: views.py:163
-msgid "ok"
-msgstr "ok"
-
-#: views.py:164
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: views.py:165
-msgid "Your File has a size of:"
-msgstr "Ihre Datei hat eine Grösse von:"
-
-#: views.py:166
-msgid "But the maximum possible size is:"
-msgstr "Aber die Maximalgrösse beträgt:"
+msgid "You can upload the following types of Files:"
+msgstr ""
