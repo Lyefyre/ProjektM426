@@ -18,7 +18,7 @@ idna==2.7
 jsonfield==2.0.2
 oauthlib==2.1.0
 pbkdf2==1.3
-Pillow==5.2.0
+Pillow==8.1.1
 py-ecc==1.4.3
 pycparser==2.18
 pycryptodome==3.6.6
