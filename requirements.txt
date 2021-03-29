@@ -35,7 +35,7 @@ django-braces==1.13.0
 django-filters==0.2.1
 weasyprint==0.42.3
 django-markup-deprecated==0.0.3
-pygments==2.2.0
+pygments==2.7.4
 docutils==0.12
 django-chartit==0.2.9
 openpyxl==2.5.9
